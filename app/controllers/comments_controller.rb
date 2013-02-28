@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
 	def create
 		@bord = Bord.find(params[:bord_id])
 		@comment = Bord.find(params[:bord_id]).comments.new(params[:comment])
-
+                #こうしたほうがいいよ
+                #@comment = @bord.comments.build params[:comment]
 		if @comment.save
 			redirect_to bord_path(@bord)
 		else
