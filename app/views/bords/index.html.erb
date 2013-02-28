@@ -1,0 +1,16 @@
+<h1></h1>
+
+<%= link_to 'スレッド新規作成', new_bord_path , :class => "btn btn-primary btn-large"%>
+
+<br />
+<br />
+<br />
+
+<table class="table table-striped">
+	<% @bords.each do |bord| %>
+	<tr>
+		<td><%= link_to bord.title, bord_path(bord) %></td>
+		<td>コメント数：<%= bord.comments.size %></td>
+	</tr>
+	<% end %>
+</table>
